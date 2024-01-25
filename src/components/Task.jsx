@@ -1,7 +1,10 @@
-import { useState } from 'react';
+/* eslint-disable react/prop-types */
+import { useContext, useState } from 'react';
+import { TasksDispatchContext } from '../contexts/TasksContextProvider';
 
-export default function Task({ task, onEdit, onDelete }) {
+export default function Task({ task }) {
   const [isEdit, setIsEdit] = useState(false);
+  const dispatch = useContext(TasksDispatchContext);
 
   let textContent;
   if (isEdit) {
@@ -11,9 +14,12 @@ export default function Task({ task, onEdit, onDelete }) {
           type='text'
           value={task.text}
           onChange={(e) => {
-            onEdit({
-              ...task,
-              text: e.target.value,
+            dispatch({
+              type: 'edit',
+              task: {
+                ...task,
+                text: e.target.value,
+              },
             });
           }}
         />
@@ -36,15 +42,27 @@ export default function Task({ task, onEdit, onDelete }) {
           type='checkbox'
           checked={task.done}
           onChange={(e) => {
-            onEdit({
-              ...task,
-              done: e.target.checked,
+            dispatch({
+              type: 'edit',
+              task: {
+                ...task,
+                done: e.target.checked,
+              },
             });
           }}
         />
 
         {textContent}
-        <button onClick={() => onDelete(task.id)}>Delete</button>
+        <button
+          onClick={() =>
+            dispatch({
+              type: 'deleted',
+              id: task.id,
+            })
+          }
+        >
+          Delete
+        </button>
       </label>
     </li>
   );
