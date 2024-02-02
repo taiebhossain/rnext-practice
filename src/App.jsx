@@ -1,9 +1,15 @@
-import Comments from './components/Comments';
+import { useState } from 'react';
+import Playground from './components/Playground';
 
 export default function App() {
+  const [show, setShow] = useState(false);
   return (
     <>
-      <Comments postId='1' />
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Unmount' : 'Mount'} the component
+      </button>
+      {show && <hr className='my-10' />}
+      {show && <Playground />}
     </>
   );
 }
