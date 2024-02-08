@@ -5,11 +5,17 @@
 body {
   max-width: 1240px;
   margin: auto;
-  padding: 20px;
+  padding: 40px;
 }
 button {
   @apply border px-5 py-2 rounded;
 }
 input {
-  @apply rounded px-5 py-2 bg-slate-300 text-slate-900;
+  @apply rounded border px-5 py-2 mb-10 bg-slate-900 text-white;
+}
+.red {
+  @apply bg-red-700;
+}
+.green {
+  @apply bg-green-700;
 }
