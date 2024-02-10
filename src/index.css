@@ -7,8 +7,14 @@ body {
   margin: auto;
   padding: 40px;
 }
+
+@layer base {
+  h1 {
+    @apply text-4xl;
+  }
+}
 button {
-  @apply border px-5 py-2 rounded;
+  @apply border px-5 py-2 mt-5 rounded;
 }
 input {
   @apply rounded border px-5 py-2 mb-10 bg-slate-900 text-white;
