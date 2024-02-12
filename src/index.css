@@ -14,14 +14,18 @@ body {
   }
 }
 button {
-  @apply border px-5 py-2 mt-5 rounded;
+  @apply border px-5 py-2 my-5 rounded;
 }
-input {
-  @apply rounded border px-5 py-2 mb-10 bg-slate-900 text-white;
-}
-.red {
-  @apply bg-red-700;
-}
-.green {
-  @apply bg-green-700;
+
+.welcome {
+  opacity: 0;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 50px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }

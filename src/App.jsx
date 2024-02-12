@@ -1,13 +1,11 @@
-import Form from './Form';
-import SaveButton from './SaveButton';
-import StatusBar from './StatusBar';
+import Header from './components/header/Header';
+import WeatherBoard from './components/weather/WeatherBoard';
 
 export default function App() {
   return (
-    <>
-      <StatusBar />
-      <SaveButton />
-      <Form />
-    </>
+    <div className='grid place-items-center h-screen'>
+      <Header />
+      <WeatherBoard />
+    </div>
   );
 }
