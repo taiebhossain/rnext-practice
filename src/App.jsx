@@ -1,15 +1,11 @@
-import { useState } from 'react';
-import AddProduct from './components/AddProduct';
-import ProductDetails from './components/ProductDetails';
-import ProductList from './components/ProductList';
+import LoginForm from './forms/LoginForm';
 
-export default function App() {
-  const [id, setId] = useState(null);
+function App() {
   return (
-    <div className='flex m-2'>
-      <AddProduct />
-      <ProductList setId={setId} />
-      {id && <ProductDetails id={id} />}
-    </div>
+    <>
+      <LoginForm />
+    </>
   );
 }
+
+export default App;
