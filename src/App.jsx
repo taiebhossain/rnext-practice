@@ -1,11 +1,10 @@
-import LoginForm from './forms/LoginForm';
+import React from 'react';
+import MouseTracker from './components/MouseTracker';
 
-function App() {
-  return (
-    <>
-      <LoginForm />
-    </>
-  );
+class App extends React.Component {
+  render() {
+    return <MouseTracker />;
+  }
 }
 
 export default App;
