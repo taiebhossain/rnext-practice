@@ -1,10 +1,11 @@
-import React from 'react';
-import MouseTracker from './components/MouseTracker';
+import { Suspense } from 'react';
+import { Loading } from './components/Loading';
+import PostsWithSuspense from './components/PostsWithSuspense';
 
-class App extends React.Component {
-  render() {
-    return <MouseTracker />;
-  }
+export default function App() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <PostsWithSuspense />
+    </Suspense>
+  );
 }
-
-export default App;
