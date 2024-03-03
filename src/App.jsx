@@ -1,10 +1,18 @@
-import React from 'react';
-import MouseTracker from './components/MouseTracker';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
-class App extends React.Component {
-  render() {
-    return <MouseTracker />;
-  }
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
-
-export default App;
